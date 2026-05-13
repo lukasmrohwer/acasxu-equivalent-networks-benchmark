@@ -18,8 +18,6 @@ def main():
     random.seed(seed)
 
     # create VNN-LIB 2.0 files given the following:
-    P = 0.001               # size of the input pertubation
-    EPS = 0.05              # size of the output distance
     VNN_COMP_TIMEOUT = 100  # per-instance verification timeout
     num_instances = 1
 
