@@ -20,11 +20,11 @@
 (assert (and (<= X_f[2] 0.5) (>= X_f[2] 0.25)))
 (assert (== X_f[3] 0.227272727))
 (assert (== X_f[4] 0.25 ))
-(assert (<= X_f[0] X_g[0]))
+(assert (and (<= X_f[0] X_g[0]) (<= X_g[0] 0.667245963)))
 (assert (== X_f[1] X_g[1]))
 (assert (== X_f[2] X_g[2]))
 (assert (== X_f[3] X_g[3]))
 (assert (== X_f[4] X_g[4]))
 
 ; Output Constraints
-(assert (and (Y_f[1] < Y_f[3]) (Y_g[1] >= Y_g[3])))
+(assert (Y_f[1] < Y_g[1]))

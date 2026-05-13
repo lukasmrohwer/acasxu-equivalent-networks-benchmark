@@ -41,6 +41,6 @@ def vnnlib_template_2():
 
     # output constraints
     lines.append("; Output Constraints")
-    lines.append("(assert (and (Y_f[1] < Y_f[3]) (Y_g[1] >= Y_g[3])))") # Find an input to f that results in weak-left, and for g results in strong-left
+    lines.append("(assert (Y_f[1] < Y_g[1]))") # Find an input where the cost associated with a weak left for f is smaller than for g
 
     return lines
