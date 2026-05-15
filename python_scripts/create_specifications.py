@@ -32,7 +32,7 @@ def vnnlib_template_2():
     lines.append("(assert (and (<= X_f[2] 0.5) (>= X_f[2] 0.25)))") # Unscaled heading angle of intruder relative to ownship heading (back-left quadrant) (1.57079632679, 3.141592653589793)
     lines.append("(assert (== X_f[3] 0.227272727))") # Unscaled speed of ownship at 900 feet per second
     lines.append("(assert (== X_f[4] 0.25 ))") # Unscaled speed of ownship at 900 feet per second
-    lines.append("(assert (and (<= X_f[0] X_g[0]) (<= X_g[0] 0.667245963)))") # For g, the distance is larger than for f and less or equal to 60000
+    lines.append("(assert (and (>= X_f[0] X_g[0]) (>= X_g[0] -0.16247807)))") # The plane is further away in f than in g
     lines.append("(assert (== X_f[1] X_g[1]))")
     lines.append("(assert (== X_f[2] X_g[2]))")
     lines.append("(assert (== X_f[3] X_g[3]))")
@@ -41,6 +41,6 @@ def vnnlib_template_2():
 
     # output constraints
     lines.append("; Output Constraints")
-    lines.append("(assert (Y_f[1] < Y_g[1]))") # Find an input where the cost associated with a weak left for f is smaller than for g
+    lines.append("(assert (Y_f[3] < Y_g[3]))") # Find an input where the cost associated with a strong left for f is smaller than for g
 
     return lines
